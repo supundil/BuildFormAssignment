@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { FaCog, FaTimes } from "react-icons/fa"; // Import settings icon
+import { FaCog, FaTimes } from "react-icons/fa";
 
 const MainFormPage = () => {
-  const [activeSection, setActiveSection] = useState(""); // Controls which section of settings is visible
-  const [title, setTitle] = useState(""); // State for title input
-  const [description, setDescription] = useState(""); // State for description input
-  const [uploadedImage, setUploadedImage] = useState(null); // State for uploaded image
-  const [showAddFieldPopup, setShowAddFieldPopup] = useState(false); // Controls Add Field Popup visibility
-  const [addedFields, setAddedFields] = useState([]); // State to store dynamically added fields
-  const [activeNav, setActiveNav] = useState("Contents"); // Controls active tab in the navbar
-  const [fieldSettings, setFieldSettings] = useState({}); // Holds settings for each added field
+  const [activeSection, setActiveSection] = useState("");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [uploadedImage, setUploadedImage] = useState(null);
+  const [showAddFieldPopup, setShowAddFieldPopup] = useState(false);
+  const [addedFields, setAddedFields] = useState([]);
+  const [activeNav, setActiveNav] = useState("Contents");
   const [showSettingsPage, setShowSettingsPage] = useState(false);
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -40,14 +39,6 @@ const MainFormPage = () => {
   const handleAddField = (fieldName) => {
     setAddedFields((prevFields) => [...prevFields, fieldName]);
     setShowAddFieldPopup(false); // Close the popup after adding
-  };
-
-  // Handle changing settings for added fields
-  const handleFieldChange = (field, value) => {
-    setFieldSettings((prevSettings) => ({
-      ...prevSettings,
-      [field]: value,
-    }));
   };
 
   return (
